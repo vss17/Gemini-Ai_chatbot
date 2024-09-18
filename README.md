@@ -1,2 +1,2 @@
-gemini-ai-chatbot
+Bujji-ai-chatbot
   https://gemini-ai-application-sai.streamlit.app/
