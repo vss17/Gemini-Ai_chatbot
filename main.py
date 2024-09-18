@@ -13,13 +13,13 @@ from gemini_utility import (load_gemini_pro_model,
 working_dir = os.path.dirname(os.path.abspath(__file__))
 
 st.set_page_config(
-    page_title="Gemini AI",
+    page_title="Anshu AI",
     page_icon="🧠",
     layout="centered",
 )
 
 with st.sidebar:
-    selected = option_menu('Gemini AI',
+    selected = option_menu('Anshu AI',
                            ['ChatBot',
                             'Image Captioning',
                             'Embed text',
@@ -46,7 +46,7 @@ if selected == 'ChatBot':
         st.session_state.chat_session = model.start_chat(history=[])
 
     # Display the chatbot's title on the page
-    st.title("🤖 ChatBot")
+    st.title("🤖 Anshu")
 
     # Display the chat history
     for message in st.session_state.chat_session.history:
@@ -54,7 +54,7 @@ if selected == 'ChatBot':
             st.markdown(message.parts[0].text)
 
     # Input field for user's message
-    user_prompt = st.chat_input("Ask Gemini-Pro...")  # Renamed for clarity
+    user_prompt = st.chat_input("Ask Anshu...")  # Renamed for clarity
     if user_prompt:
         # Add user's message to chat and display it
         st.chat_message("user").markdown(user_prompt)
