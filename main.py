@@ -75,10 +75,11 @@ if selected == "Image Captioning":
     uploaded_image = st.file_uploader("Upload an image...", type=["jpg", "jpeg", "png"])
 
     if st.button("Generate Caption"):
-      image = Image.open(uploaded_image)
-      col1, col2 = st.columns(2)
+        image = Image.open(uploaded_image)
 
-      with col1:
+        col1, col2 = st.columns(2)
+
+        with col1:
             resized_img = image.resize((800, 500))
             st.image(resized_img)
 
@@ -89,6 +90,7 @@ if selected == "Image Captioning":
 
         with col2:
             st.info(caption)
+
 
 
 # text embedding model
