@@ -75,11 +75,10 @@ if selected == "Image Captioning":
     uploaded_image = st.file_uploader("Upload an image...", type=["jpg", "jpeg", "png"])
 
     if st.button("Generate Caption"):
-        image = Image.open(uploaded_image)
+      image = Image.open(uploaded_image)
+      col1, col2 = st.columns(2)
 
-        col1, col2 = st.columns(2)
-
-        with col1:
+      with col1:
             resized_img = image.resize((800, 500))
             st.image(resized_img)
 
