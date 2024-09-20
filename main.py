@@ -21,10 +21,9 @@ st.set_page_config(
 with st.sidebar:
     selected = option_menu('Bujji AI',
                            ['ChatBot',
-                            'Image Captioning',
                             'Embed text',
                             'Ask me anything'],
-                           menu_icon='robot', icons=['chat-dots-fill', 'image-fill', 'textarea-t', 'patch-question-fill'],
+                           menu_icon='robot', icons=['chat-dots-fill','textarea-t', 'patch-question-fill'],
                            default_index=0
                            )
 
@@ -65,32 +64,6 @@ if selected == 'ChatBot':
         # Display Gemini-Pro's response
         with st.chat_message("assistant"):
             st.markdown(gemini_response.text)
-
-
-# Image captioning page
-if selected == "Image Captioning":
-
-    st.title("📷 Snap Narrate")
-
-    uploaded_image = st.file_uploader("Upload an image...", type=["jpg", "jpeg", "png"])
-
-    if st.button("Generate Caption"):
-        image = Image.open(uploaded_image)
-
-        col1, col2 = st.columns(2)
-
-        with col1:
-            resized_img = image.resize((800, 500))
-            st.image(resized_img)
-
-        default_prompt = "write a short caption for this image"  # change this prompt as per your requirement
-
-        # get the caption of the image from the gemini-pro-vision LLM
-        caption = gemini_pro_vision_response(default_prompt, image)
-
-        with col2:
-            st.info(caption)
-
 
 
 # text embedding model
