@@ -8,11 +8,11 @@ load_dotenv()
 
 # streamlit page setup
 st.set_page_config(
-    page_title="Chatbot",
-    page_icon="🤖",
+    page_title="Bujji",
+    page_icon="🧠",
     layout="centered",
 )
-st.title("💬 Generative AI Chatbot")
+st.title("💬 Bujji AI Chatbot")
 
 # initiate chat history
 if "chat_history" not in st.session_state:
@@ -41,3 +41,4 @@ if user_prompt:
     )
     assistant_response = response.content
     st.session_state.chat_history.append({"role": "assistant", "content": assistant_response})
+
