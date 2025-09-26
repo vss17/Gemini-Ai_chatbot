@@ -8,7 +8,7 @@ load_dotenv()
 
 # streamlit page setup
 st.set_page_config(
-    page_title="Bujji",
+    page_title="Bujjibot",
     page_icon="🧠",
     layout="centered",
 )
@@ -42,3 +42,5 @@ if user_prompt:
     assistant_response = response.content
     st.session_state.chat_history.append({"role": "assistant", "content": assistant_response})
 
+    with st.chat_message("assistant"):
+        st.markdown(assistant_response)
